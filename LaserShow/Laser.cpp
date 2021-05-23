@@ -5,7 +5,7 @@
 // these values can be adapted to fine tune sendto:
 
 // if this is enabled, pins need to be 10 and 7 in dac init below, but it is a big speedup!
-#define MCP4X_PORT_WRITE 1
+#define MCP4X_PORT_WRITE 0
 
 #include "DAC_MCP4X.h"
 
@@ -263,7 +263,8 @@ void Laser::on()
   {
     wait(LASER_TOGGLE_DELAY);
     _state = 1;
-    digitalWrite(_laserPin, HIGH);
+    analogWrite(_laserPin, 255);
+    //digitalWrite(_laserPin, HIGH);
   }
 }
 
@@ -292,4 +293,3 @@ void Laser::setOffset(long offsetX, long offsetY)
   _offsetX = offsetX;
   _offsetY = offsetY;
 }
-

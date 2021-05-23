@@ -18,8 +18,8 @@ void setup()
 
 void letterEffect()
 {  
-  String dyn = "AZAZAYBY";
-  String lu  = "DELTAFLO";
+  String dyn = "DLONRA NAGOL";
+  String lu  = "LOGAN ARNOLD";
   int w = Drawing::stringAdvance(lu);
   laser.setScale(3048./w);
   laser.setOffset(2048,2048);
@@ -90,7 +90,7 @@ void laserShow()
     world = Matrix3::rotateY(angle % 360);
     laser.setMatrix(world);
     laser.setOffset(1024,1024 - 600);
-    Drawing::drawString("SHOW",-w/2,-500, 1);
+    Drawing::drawString("SHIT",-w/2,-500, 1);
     angle += 8;
   }
   laser.setEnable3D(false);
@@ -393,4 +393,3 @@ void loop() {
 //  drawObjects();
 //  jumpingText();
 }
-
