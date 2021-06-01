@@ -372,24 +372,36 @@ void drawScroller(String s, float scale = 0.5, int offsetY = 2048, int speed = 1
   }
 }
 
+void drawSTL()
+{
+  long centerX, centerY, w,h;
+  Drawing::calcObjectBox(draw_stl, sizeof(draw_stl)/4, centerX, centerY, w, h);
+  laser.setScale((4096/(float)h)*1);
+  laser.setOffset(2048,2048);
+  for (int i = 0;i<sizeof(drawSTL);i++) {
+    Drawing::drawObject(draw_stl, sizeof(draw_stl)/4, -centerX, -centerY);
+  }
+}
+
 void loop() {
-  countDown();
-  letterEffect();
-  presents();
-  arduino();
-  laserShow();
-  drawPlane();
-  drawLogo();
-  drawScroller(String("THIS PROJECT IS AVAILABLE ON INSTRUCTABLES.COM"),0.5,2048,100);
-  drawWeLove();
-  drawArduino2DRotate();
-  whatAbout3D();
-  rotateCube(400);
-  drawBike();
-  globe(200);
-  drawArduino3D();
-  drawScroller(String("SOURCE CODE AVAILABLE ON GITHUB!"),0.25,2048,100);
+  //countDown();
+  //letterEffect();
+  //presents();
+  //arduino();
+  //laserShow();
+  //drawPlane();
+  // drawLogo();
+  // drawScroller(String("THIS PROJECT IS AVAILABLE ON INSTRUCTABLES.COM"),0.5,2048,100);
+  // drawWeLove();
+  // drawArduino2DRotate();
+  // whatAbout3D();
+  // rotateCube(400);
+  // drawBike();
+  // globe(200);
+  // drawArduino3D();
+  // drawScroller(String("SOURCE CODE AVAILABLE ON GITHUB!"),0.25,2048,100);
 
 //  drawObjects();
 //  jumpingText();
+  drawSTL();
 }
