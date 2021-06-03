@@ -29,11 +29,6 @@ def splitGCommand(inputLine):
       newposy = float(cmd.split("Y")[1])
 
   return newposx, newposy
-      #newposx = float(parts[0][1:])
-      #newposy = float(parts[1])
-      #cmds.append((2,newposx,newposy))
-      #posx = newposx
-      #posy = newposy
 
 def createObject(name, cmds):
   minx = miny = 10000000
