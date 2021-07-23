@@ -9,8 +9,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
-            "args": ["NEWGCode.gcode", "output.cpp"],
+            "console": "integratedTerminal"
+            //"args": ["CFFFP_PowderPlateV2.gcode", "output.cpp"],
             
         }
     ]

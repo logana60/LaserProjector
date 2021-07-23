@@ -13,6 +13,10 @@ Laser laser(5);
 void setup()
 {  
   laser.init();
+
+  // only use for testing with serial commands
+  Serial.begin(9600);
+  laser.on();
 }
 
 
@@ -403,5 +407,19 @@ void loop() {
 
 //  drawObjects();
 //  jumpingText();
-  drawSTL();
+  //drawSTL();
+  while(Serial.available() == 0) {}
+
+  String inputCommand = Serial.readString();
+
+  //comand in format x y
+  long x = long(inputCommand.substring(0, inputCommand.indexOf(" ")).toInt());
+  long y = long(inputCommand.substring(inputCommand.indexOf(" ") + 1).toInt());
+
+  Serial.print("sending laser to x: ");
+  Serial.print(x);
+  Serial.print("  y: ");
+  Serial.println(y);
+
+  laser.sendtoRaw(x, y);
 }
